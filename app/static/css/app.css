@@ -1,0 +1,40 @@
+:root {
+  --bg: #10141a;
+  --surface: #1a212b;
+  --text: #e6edf3;
+  --muted: #8b98a5;
+  --accent: #4f8cff;
+  --error: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.boot-panel {
+  max-width: 480px;
+  margin: 20vh auto;
+  padding: 24px;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.boot-status {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.boot-status.ok {
+  color: var(--accent);
+}
+
+.boot-status.error {
+  color: var(--error);
+}

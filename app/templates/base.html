@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Kanban{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  {% block content %}
+  <main class="boot-panel">
+    <h1>Kanban</h1>
+    <p>The server is up and serving pages.</p>
+    <p class="boot-status">checking vendor libraries&hellip;</p>
+  </main>
+  {% endblock %}
+
+  <script src="/static/vendor/htmx.min.js" defer></script>
+  <script src="/static/vendor/alpine.min.js" defer></script>
+  <script src="/static/vendor/Sortable.min.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const ok = Boolean(window.htmx && window.Alpine && window.Sortable);
+      const el = document.querySelector(".boot-status");
+      if (el) {
+        el.textContent = ok
+          ? "Vendor libraries loaded: htmx " + window.htmx.version +
+            " · alpine " + window.Alpine.version +
+            " · sortablejs " + window.Sortable.version;
+        el.classList.add(ok ? "ok" : "error");
+      }
+    });
+  </script>
+</body>
+</html>

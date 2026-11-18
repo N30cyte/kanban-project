@@ -1,0 +1,15 @@
+# local data (database + uploads live here)
+data/*
+!data/.gitkeep
+
+# secrets
+.env
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# os
+.DS_Store
