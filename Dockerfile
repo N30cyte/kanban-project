@@ -8,7 +8,6 @@ WORKDIR /app
 # Install from the full resolved lock so the build never re-resolves
 # transitive dependencies (root cause of past failed builds). Generous
 # timeout/retries keep flaky networks from killing the build mid-download.
-# Slice 2 prepends `alembic upgrade head &&` to the CMD.
 COPY requirements.txt requirements.lock ./
 RUN pip install --no-cache-dir --timeout 60 --retries 10 -r requirements.lock
 
