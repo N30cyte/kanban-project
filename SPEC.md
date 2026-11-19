@@ -522,6 +522,7 @@ def test_create_project_adds_complete_column(auth_client):
 | 2026-11-17 | Compose adds a stdlib-only healthcheck (urllib → `/healthz`); `data/.gitkeep` committed | `docker compose ps` reports true liveness; the `./data` mount target always exists and is user-owned. |
 | 2026-11-17 | Registration closes after the first account (open Q2 resolved: yes) | ~10 lines; prevents a second account from silently breaking single-user assumptions. |
 | 2026-11-17 | *Complete* column always renders rightmost, excluded from reordering (open Q1 resolved: yes) | Matches the spec's recommended approach; simplest consistent rule. |
+| 2026-11-18 | `base.html` boot-status used a ternary with no else branch (a SyntaxError — the listener never registered even though all three vendor libraries loaded fine) | Caught by a jsdom run against the live app; the status line now has an explicit failure branch and always updates. |
 
 ### Open Questions
 | # | Question | Recommended approach |

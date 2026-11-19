@@ -14,4 +14,6 @@ RUN pip install --no-cache-dir --timeout 60 --retries 10 -r requirements.lock
 COPY . .
 
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Migrate on every start (idempotent for an already-migrated database),
+# then run the server.
+CMD ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]

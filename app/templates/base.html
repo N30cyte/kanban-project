@@ -20,15 +20,15 @@
   <script src="/static/vendor/Sortable.min.js"></script>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
-      const ok = Boolean(window.htmx && window.Alpine && window.Sortable);
       const el = document.querySelector(".boot-status");
-      if (el) {
-        el.textContent = ok
-          ? "Vendor libraries loaded: htmx " + window.htmx.version +
-            " · alpine " + window.Alpine.version +
-            " · sortablejs " + window.Sortable.version;
-        el.classList.add(ok ? "ok" : "error");
-      }
+      if (!el) return;
+      const ok = Boolean(window.htmx && window.Alpine && window.Sortable);
+      el.textContent = ok
+        ? "Vendor libraries loaded: htmx " + window.htmx.version +
+          " · alpine " + window.Alpine.version +
+          " · sortablejs " + window.Sortable.version
+        : "vendor libraries failed to load — check the server console";
+      el.classList.add(ok ? "ok" : "error");
     });
   </script>
 </body>

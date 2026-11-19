@@ -6,9 +6,10 @@ foreign-key pragma in :mod:`app.db`).
 
 import enum
 from datetime import datetime, timezone
+from typing import Any
 
 from sqlalchemy import Boolean, DateTime, Enum, ForeignKey, Integer, Text
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, MappedColumn, mapped_column, relationship
 
 from app.db import Base
 
@@ -26,7 +27,7 @@ class Priority(str, enum.Enum):
     needs_assigning = "needs_assigning"
 
 
-def _priority_column() -> "Any":
+def _priority_column() -> MappedColumn[Any]:
     """Shared column definition for the MoSCoW priority field (SPEC §3.3)."""
     return mapped_column(
         Enum(
