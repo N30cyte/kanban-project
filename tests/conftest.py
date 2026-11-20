@@ -1,7 +1,4 @@
-"""Shared fixtures (SPEC §9.2).
-
-``auth_client`` arrives with Slice 3, when /register and /login exist.
-"""
+"""Shared fixtures (SPEC §9.2)."""
 
 from collections.abc import Iterator
 from pathlib import Path
@@ -30,3 +27,12 @@ def client(tmp_path: Path) -> TestClient:
         yield c
     app.dependency_overrides.clear()
     engine.dispose()
+
+
+@pytest.fixture
+def auth_client(client: TestClient) -> TestClient:
+    """A logged-in client: registers the first account, then logs in."""
+    creds = {"email": "test@example.com", "password": "pass12345"}
+    client.post("/register", data=creds)
+    client.post("/login", data=creds)
+    return client

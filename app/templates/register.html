@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Register · Kanban{% endblock %}
+
+{% block content %}
+<main class="auth-panel">
+  <h1>Create your account</h1>
+  <p class="auth-hint">This board keeps a single account — the first one to register owns it.</p>
+  {% if error %}
+  <p class="form-error" role="alert">{{ error }}</p>
+  {% endif %}
+  <form method="post" action="/register">
+    <label>
+      Email
+      <input type="email" name="email" value="{{ email }}" autocomplete="username" required>
+    </label>
+    <label>
+      Password
+      <input type="password" name="password" autocomplete="new-password" required>
+    </label>
+    <button type="submit">Register</button>
+  </form>
+  <p class="auth-alt">Already registered? <a href="/login">Log in</a></p>
+</main>
+{% endblock %}

@@ -38,3 +38,62 @@ body {
 .boot-status.error {
   color: var(--error);
 }
+
+.auth-panel {
+  max-width: 400px;
+  margin: 18vh auto;
+  padding: 24px;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.auth-panel h1 {
+  margin-top: 0;
+}
+
+.auth-panel label {
+  display: block;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.auth-panel input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid #2c3644;
+  border-radius: 6px;
+}
+
+.auth-panel button {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 9px 12px;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.auth-alt {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.form-error {
+  color: var(--error);
+}
