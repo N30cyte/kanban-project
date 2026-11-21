@@ -3,9 +3,16 @@
 {% block title %}Kanban{% endblock %}
 
 {% block content %}
-<main class="boot-panel">
+<main class="auth-panel">
   <h1>Kanban</h1>
-  <p>You have no projects yet.</p>
-  <p class="boot-status">Your first board is one step away.</p>
+  <p class="auth-hint">You have no projects yet. Create your first board to get started.</p>
+  <form method="post" action="/projects">
+    <label>
+      Project name
+      <input type="text" name="name" placeholder="e.g. My Game" autocomplete="off" required>
+    </label>
+    <button type="submit">Create project</button>
+  </form>
+  {% if error %}<p class="form-error" role="alert">{{ error }}</p>{% endif %}
 </main>
 {% endblock %}

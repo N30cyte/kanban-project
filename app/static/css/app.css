@@ -97,3 +97,175 @@ body {
 .form-error {
   color: var(--error);
 }
+
+/* Board layout (SPEC §5.1) */
+.board-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  flex: 0 0 auto;
+  padding: 20px;
+  background: var(--surface);
+  border-right: 1px solid #2c3644;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.project-list li {
+  margin: 0 0 8px;
+}
+
+.project-list a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.project-list a:hover {
+  color: var(--accent);
+}
+
+.new-project,
+.logout {
+  margin-top: 16px;
+}
+
+.new-project input,
+.logout input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid #2c3644;
+  border-radius: 6px;
+}
+
+.new-project button,
+.logout button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 9px 12px;
+  font-size: 0.95rem;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.board {
+  flex: 1;
+  padding: 20px;
+}
+
+.board-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.board-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.board-rename {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.board-rename input {
+  padding: 6px 10px;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid #2c3644;
+  border-radius: 6px;
+}
+
+.board-rename button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.board-delete {
+  margin-left: auto;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: var(--error);
+  background: transparent;
+  border: 1px solid var(--error);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.columns {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  align-items: flex-start;
+}
+
+.column {
+  flex: 0 0 auto;
+  width: 280px;
+  padding: 12px;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.column-name {
+  font-weight: 600;
+}
+
+.column-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  background: var(--accent);
+  border-radius: 999px;
+  color: #fff;
+}
+
+.cards {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  padding: 10px;
+  background: var(--bg);
+  border: 1px solid #2c3644;
+  border-radius: 6px;
+}

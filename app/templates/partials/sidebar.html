@@ -1,0 +1,17 @@
+<aside class="sidebar">
+  <h2>Projects</h2>
+  <ul class="project-list">
+    {% for p in projects %}
+    <li>
+      <a href="/projects/{{ p.id }}">{{ p.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <form method="post" action="/projects" class="new-project">
+    <input type="text" name="name" placeholder="New project…" required>
+    <button type="submit">+ New Project</button>
+  </form>
+  <form method="post" action="/logout" class="logout">
+    <button type="submit">Log out</button>
+  </form>
+</aside>

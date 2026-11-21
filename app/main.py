@@ -14,6 +14,7 @@ from app.config import settings
 from app.db import get_db
 from app.models import User
 from app.routes.auth import router as auth_router
+from app.routes.projects import router as projects_router
 from app.services.projects import first_project
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -29,6 +30,7 @@ app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 app.state.templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
 app.include_router(auth_router)
+app.include_router(projects_router)
 
 
 @app.exception_handler(AuthenticationRequired)

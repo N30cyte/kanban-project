@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.name }} · Kanban{% endblock %}
+
+{% block content %}
+<div class="board-layout">
+  {% include "partials/sidebar.html" %}
+  <main class="board">
+    {% include "partials/board_header.html" %}
+    <section class="columns">
+      {% for column in columns %}
+      <section class="column" id="column-{{ column.id }}" data-column-id="{{ column.id }}">
+        <header class="column-header">
+          <span class="column-name">{{ column.name }}</span>
+          {% if column.is_complete %}<span class="column-badge">Complete</span>{% endif %}
+        </header>
+        <div class="cards">
+          {% for card in column.cards %}
+          <article class="card" id="card-{{ card.id }}">
+            <h3 class="card-title">{{ card.title }}</h3>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </section>
+  </main>
+</div>
+{% endblock %}

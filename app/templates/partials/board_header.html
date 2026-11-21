@@ -1,0 +1,9 @@
+<div id="board-header" class="board-header">
+  <h1>{{ project.name }}</h1>
+  <form class="board-rename" hx-patch="/projects/{{ project.id }}">
+    <input type="text" name="name" value="{{ project.name }}" required>
+    <button type="submit">Rename</button>
+  </form>
+  <button type="button" class="board-delete" hx-delete="/projects/{{ project.id }}">Delete</button>
+  {% if error %}<p class="form-error" role="alert">{{ error }}</p>{% endif %}
+</div>
