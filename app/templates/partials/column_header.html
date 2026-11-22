@@ -1,0 +1,18 @@
+<header class="column-header" id="column-header-{{ column.id }}">
+  <div class="column-title-row">
+    <span class="column-name">{{ column.name }}</span>
+    {% if column.is_complete %}
+    <span class="column-badge">Complete</span>
+    {% else %}
+    <span class="column-handle" title="Drag to reorder">⋮⋮</span>
+    <button type="button" class="column-delete" hx-delete="/columns/{{ column.id }}" hx-target="closest .column" hx-swap="delete">Delete</button>
+    {% endif %}
+  </div>
+  {% if not column.is_complete %}
+  <form class="column-rename" hx-patch="/columns/{{ column.id }}" hx-target="#column-header-{{ column.id }}" hx-swap="outerHTML">
+    <input type="text" name="name" value="{{ column.name }}" required>
+    <button type="submit">Rename</button>
+  </form>
+  {% endif %}
+  {% if error %}<p class="form-error" role="alert">{{ error }}</p>{% endif %}
+</header>

@@ -1,0 +1,10 @@
+<section class="column" id="column-{{ column.id }}" data-column-id="{{ column.id }}">
+  {% include "partials/column_header.html" %}
+  <div class="cards">
+    {% for card in column.cards %}
+    <article class="card" id="card-{{ card.id }}">
+      <h3 class="card-title">{{ card.title }}</h3>
+    </article>
+    {% endfor %}
+  </div>
+</section>

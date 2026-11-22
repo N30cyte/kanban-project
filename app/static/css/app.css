@@ -212,8 +212,33 @@ body {
   cursor: pointer;
 }
 
-.board-delete {
+.new-column {
+  display: flex;
+  gap: 8px;
+  align-items: center;
   margin-left: auto;
+}
+
+.new-column input {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid #2c3644;
+  border-radius: 6px;
+}
+
+.new-column button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.board-delete {
   padding: 6px 12px;
   font-size: 0.85rem;
   color: var(--error);
@@ -230,6 +255,15 @@ body {
   align-items: flex-start;
 }
 
+/* Sortable list of user columns; *Complete* stays outside it, last. */
+.user-columns {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
 .column {
   flex: 0 0 auto;
   width: 280px;
@@ -240,12 +274,65 @@ body {
 
 .column-header {
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.column-title-row {
+  display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .column-name {
+  flex: 1;
+  min-width: 0;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.column-handle {
+  cursor: grab;
+  color: var(--muted);
+  user-select: none;
+}
+
+.column-rename {
+  display: flex;
+  gap: 6px;
+}
+
+.column-rename input {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid #2c3644;
+  border-radius: 6px;
+}
+
+.column-rename button {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.column-delete {
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  color: var(--error);
+  background: transparent;
+  border: 1px solid var(--error);
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .column-badge {

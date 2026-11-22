@@ -4,6 +4,10 @@
     <input type="text" name="name" value="{{ project.name }}" required>
     <button type="submit">Rename</button>
   </form>
+  <form class="new-column" hx-post="/projects/{{ project.id }}/columns" hx-target="#user-columns" hx-swap="beforeend">
+    <input type="text" name="name" placeholder="New column" required>
+    <button type="submit">+ New Column</button>
+  </form>
   <button type="button" class="board-delete" hx-delete="/projects/{{ project.id }}">Delete</button>
   {% if error %}<p class="form-error" role="alert">{{ error }}</p>{% endif %}
 </div>
