@@ -11,7 +11,9 @@ Built in slices, one at a time (see `SPEC.md` for the full design):
 | 1 | Bootstrap | ✅ Done |
 | 2 | Database & migrations | ✅ Done |
 | 3 | Auth | ✅ Done |
-| 4 | Projects | 🚧 Next up |
+| 4 | Projects | ✅ Done |
+| 5 | Columns | ✅ Done |
+| 6 | Cards | 🚧 Next up |
 
 ## Tech Stack (pinned)
 
