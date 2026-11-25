@@ -356,3 +356,34 @@ body {
   border: 1px solid #2c3644;
   border-radius: 6px;
 }
+
+.card-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.card-form input {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid #2c3644;
+  border-radius: 6px;
+}
+
+.card-form button {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}

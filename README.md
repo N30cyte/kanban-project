@@ -13,7 +13,7 @@ Built in slices, one at a time (see `SPEC.md` for the full design):
 | 3 | Auth | ✅ Done |
 | 4 | Projects | ✅ Done |
 | 5 | Columns | ✅ Done |
-| 6 | Cards | 🚧 Next up |
+| 6 | Cards | ✅ Done |
 
 ## Tech Stack (pinned)
 
